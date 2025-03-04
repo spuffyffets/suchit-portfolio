@@ -1,19 +1,16 @@
 export const experiences = [
 {
     id: 1,
-    title: "java FullStack Developer",
-    company: "Fiverr (freelan)",
-    duration: "(Jun 2021 - Jan 2022)"
+    title: "Software Developer",
+    company: "Sanyu Infotech PVT LTD",
+    duration: "(Feb 2025 - Present)"
   },
-
-
-
-
-  {
+  
+ {
     id: 2,
     title: "Java FullStack Developer(Intern)",
     company: "Web Mind It Solution.",
-    duration: "(Jan 2024 - Present)"
+    duration: "(Jan 2024 - Jan 2025)"
   },
   
   {
