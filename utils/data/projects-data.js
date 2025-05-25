@@ -10,9 +10,9 @@ export const projectsData = [
         description: "My team and I developed a GUI-based application for Ubuntu hardening, designed to enhance system security by automating essential configuration settings. I used Electron.js to create a cross-platform desktop application with an intuitive user interface. The app implements security policies such as disabling unused ports, configuring firewall settings, and automating updates. Developed scripts to monitor and log unauthorized access attempts, ensuring compliance with best security practices.",
         tools: ['Electron.js', 'Node.js', 'Bash Scripting', 'Linux Security Tools', 'FirewallD', 'NPM Modules'],
         role: 'Frontend and Backend Developer',
-        code: '',
+        code: 'https://github.com/Minal1303/ubuntu-hardening.git',
         demo: '',
-        image: crefin,
+        image: '',
     },
     
     {
@@ -21,11 +21,23 @@ export const projectsData = [
         description: 'I developed a full-stack Student Management System to streamline student records, attendance, and performance tracking. The front end was created using ReactJS, Material-UI, and TailwindCSS, providing a responsive and user-friendly interface. The back end was built with Node.js, Express.js, and MySQL, ensuring secure and efficient data management. Features include role-based access for administrators, teachers, and students, along with automated report generation. The application was deployed using AWS EC2 and S3 for scalability.',
         tools: ['ReactJS', 'Material-UI', 'TailwindCSS', 'Node.js', 'Express.js', 'MySQL', 'AWS EC2', 'AWS S3', 'JWT'],
         role: 'Full Stack Developer',
-        code: '',
+        code: 'https://github.com/spuffyffets/MERN-School-Management-System.git',
         demo: '',
-        image: travel,
+        image: '',
     },
+    {
+    id: 3,
+    name: 'Inventory Management System',
+    description: 'A full-stack Inventory Management System developed for a medical store to manage product inventory, stock levels, and transactions. The frontend is built using Angular and TailwindCSS, while the backend is powered by Spring Boot and MySQL. It features role-based login, JWT authentication, and RESTful APIs. The application is deployed on AWS EC2 for secure and scalable access.',
+    tools: ['Angular', 'TailwindCSS', 'Spring Boot', 'MySQL', 'JWT', 'REST API', 'AWS EC2'],
+    role: 'Full Stack Developer',
+    code: 'https://github.com/spuffyffets/frontend.git',
+    demo: '', // Optional: Live demo link
+    image: '', // Replace 'ims' with your actual image import
+}
 
+
+];
 
 
 //     {
@@ -71,7 +83,7 @@ export const projectsData = [
     //     image: ayla,
     //     role: 'Full Stack Developer',
     // }
-];
+
 
 
 // Do not remove any property.
