@@ -1,6 +1,8 @@
 // @flow strict
 
 import * as React from 'react';
+import Image from 'next/image';
+
 
 function ProjectCard({ project }) {
 
@@ -76,7 +78,37 @@ function ProjectCard({ project }) {
                 <span className="text-gray-400">,</span>
               </div>
             )
-          }
+          }{
+  project.demo && (
+    <div className="ml-4 lg:ml-8 mr-2">
+      <span className="text-white">Demo:</span>
+      <a
+        href={project.demo}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-400 hover:underline ml-1"
+      >
+        {project.demo}
+      </a>
+      <span className="text-gray-400">,</span>
+    </div>
+  )
+}
+{project.image && (
+  <div className="mt-4 flex justify-center">
+    <img
+      src={project.image}
+      alt={project.name}
+      className="w-full max-w-md rounded-lg border border-indigo-700 shadow-md"
+    />
+  </div>
+)}
+
+
+
+
+
+
           <div><span className="text-gray-400">{`};`}</span></div>
         </code>
       </div>

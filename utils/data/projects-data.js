@@ -12,7 +12,7 @@ export const projectsData = [
         role: 'Frontend and Backend Developer',
         code: 'https://github.com/Minal1303/ubuntu-hardening.git',
         demo: '',
-        image: '',
+        image: 'image/Ubuntu Hardening GUI Application-1.jpg', 
     },
     
     {
@@ -22,8 +22,8 @@ export const projectsData = [
         tools: ['ReactJS', 'Material-UI', 'TailwindCSS', 'Node.js', 'Express.js', 'MySQL', 'AWS EC2', 'AWS S3', 'JWT'],
         role: 'Full Stack Developer',
         code: 'https://github.com/spuffyffets/MERN-School-Management-System.git',
-        demo: '',
-        image: '',
+        demo: 'https://school-commander.vercel.app/',
+       image: 'image/Student Management System.png', 
     },
     {
     id: 3,
@@ -32,8 +32,8 @@ export const projectsData = [
     tools: ['Angular', 'TailwindCSS', 'Spring Boot', 'MySQL', 'JWT', 'REST API', 'AWS EC2'],
     role: 'Full Stack Developer',
     code: 'https://github.com/spuffyffets/frontend.git',
-    demo: '', // Optional: Live demo link
-    image: '', // Replace 'ims' with your actual image import
+    demo: 'https://medtrackbysuchit.vercel.app/login', 
+    image: 'image/Inventory Management System.png', 
 }
 
 
