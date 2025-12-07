@@ -1,119 +1,78 @@
-// @flow strict
-
-import * as React from 'react';
-import Image from 'next/image';
-
+import React from "react";
+import Image from "next/image";
 
 function ProjectCard({ project }) {
-
   return (
-    <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
-      <div className="flex flex-row">
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-        <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
-      </div>
-      <div className="px-4 lg:px-8 py-3 lg:py-5 relative">
-        <div className="flex flex-row space-x-1 lg:space-x-2 absolute top-1/2 -translate-y-1/2">
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-red-400"></div>
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
+    <div
+      className="
+        group relative overflow-hidden rounded-2xl 
+        bg-[#10172a] border border-[#1f2a44]
+        shadow-lg hover:shadow-2xl 
+        transition-all duration-500
+      "
+    >
+      {/* IMAGE */}
+      <div className="relative w-full h-64">
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          className="
+            object-cover rounded-2xl 
+            group-hover:scale-110 transition-all duration-500
+          "
+        />
+
+        {/* HOVER OVERLAY */}
+        <div
+          className="
+            absolute inset-0 bg-black/60 opacity-0 
+            group-hover:opacity-100 transition-all duration-500 
+            flex items-center justify-center
+          "
+        >
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                px-6 py-2 bg-[#16f2b3] text-black font-semibold 
+                rounded-lg text-lg shadow-md hover:scale-105 
+                transition-all duration-300
+              "
+            >
+              Launch
+            </a>
+          )}
         </div>
-        <p className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl">
-          {project.name}
-        </p>
       </div>
-      <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
-        <code className="font-mono text-xs md:text-sm lg:text-base">
-          <div className="blink">
-            <span className="mr-2 text-pink-500">const</span>
-            <span className="mr-2 text-white">project</span>
-            <span className="mr-2 text-pink-500">=</span>
-            <span className="text-gray-400">{'{'}</span>
-          </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
-            <span className="text-gray-400">{`'`}</span>
-            <span className="text-amber-300">{project.name}</span>
-            <span className="text-gray-400">{`',`}</span>
-          </div>
 
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className=" text-white">tools:</span>
-            <span className="text-gray-400">{` ['`}</span>
-            {
-              project.tools.map((tag, i) => (
-                <React.Fragment key={i}>
-                  <span className="text-amber-300">{tag}</span>
-                  {
-                    project.tools.length - 1 !== i &&
-                    <span className="text-gray-400">{`', '`}</span>
-                  }
-                </React.Fragment>
-              ))
-            }
-            <span className="text-gray-400">{"],"}</span>
-          </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>
-            <span className="text-orange-400">{project.role}</span>
-            <span className="text-gray-400">,</span>
-          </div>
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white">Description:</span>
-            <span className="text-cyan-400">{' ' + project.description}</span>
-            <span className="text-gray-400">,</span>
-          </div>
-          {
-            project.code && (
-              <div className="ml-4 lg:ml-8 mr-2">
-                <span className="text-white">Code:</span>
-                <a
-                  href={project.code}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:underline ml-1"
-                >
-                  {project.code}
-                </a>
-                <span className="text-gray-400">,</span>
-              </div>
-            )
-          }{
-  project.demo && (
-    <div className="ml-4 lg:ml-8 mr-2">
-      <span className="text-white">Demo:</span>
-      <a
-        href={project.demo}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-400 hover:underline ml-1"
-      >
-        {project.demo}
-      </a>
-      <span className="text-gray-400">,</span>
-    </div>
-  )
-}
-{project.image && (
-  <div className="mt-4 flex justify-center">
-    <img
-      src={project.image}
-      alt={project.name}
-      className="w-full max-w-md rounded-lg border border-indigo-700 shadow-md"
-    />
-  </div>
-)}
+      {/* CONTENT AREA */}
+      <div className="p-5 text-center">
+        {/* PROJECT TITLE */}
+        <h2 className="text-xl font-bold text-[#16f2b3] mb-4">
+          {project.name}
+        </h2>
 
-
-
-
-
-
-          <div><span className="text-gray-400">{`};`}</span></div>
-        </code>
+        {/* TECH STACK BADGES */}
+        <div className="flex flex-wrap justify-center gap-2">
+          {project.tools.map((tool, index) => (
+            <span
+              key={index}
+              className="
+                px-3 py-1 text-sm 
+                bg-[#1a2140] border border-[#253056] 
+                text-gray-300 rounded-md
+              "
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default ProjectCard;
