@@ -1,4 +1,3 @@
-// ICON IMPORTS (make sure these SVGs exist in /public/svg/skills/)
 import java from "/public/svg/skills/java.svg";
 import html from "/public/svg/skills/html.svg";
 import css from "/public/svg/skills/css.svg";
@@ -6,7 +5,7 @@ import bootstrap from "/public/svg/skills/bootstrap.svg";
 import angular from "/public/svg/skills/angular.svg";
 import spring from "/public/svg/skills/spring.svg";
 import mysql from "/public/svg/skills/mysql.svg";
-import mongodb from "/public/svg/skills/mongodb.svg";
+import mongodb from "/public/svg/skills/mongoDB.svg"; // ✅ FIX
 import postgresql from "/public/svg/skills/postgresql.svg";
 import redis from "/public/svg/skills/redis.svg";
 import git from "/public/svg/skills/git.svg";
@@ -16,7 +15,8 @@ import cicd from "/public/svg/skills/cicd.svg";
 import postman from "/public/svg/skills/postman.svg";
 import aws from "/public/svg/skills/aws.svg";
 import restapis from "/public/svg/skills/restapis.svg";
-import agileMethodologies from "/public/svg/skills/agilemethodologies.svg";
+import agileMethodologies from "/public/svg/skills/agileMethodologies.svg"; // ✅ FIX
+
 // MAIN FUNCTION
 export const skillsImage = (skill) => {
   if (!skill) return null;
