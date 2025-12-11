@@ -2,38 +2,154 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🌈 ENHANCED AURORA NEON PALETTE — MORE VIBRANT */
 :root {
-  --foreground-rgb: rgb(211, 216, 232);
+  --mint: 22, 255, 205;        /* Brighter Aqua Mint */
+  --pink: 255, 90, 190;        /* Neon Candy Pink */
+  --violet: 140, 70, 255;      /* Electric Violet */
+  --dark1: 5, 7, 20;           /* Deeper Galaxy Night */
+  --dark2: 12, 14, 35;         /* Midnight Indigo */
+  --text-light: 245, 247, 255; /* Cool soft white */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    --text-light: 255, 255, 255;
   }
 }
 
+/* 🌌 IMPROVED AURORA BACKGROUND — More Glow, More Depth */
 body {
-  color: rgb(var(--foreground-rgb));
-  background-color: #0d1224;
+  color: rgb(var(--text-light));
+  background:
+    radial-gradient(circle at 20% 10%, rgba(var(--violet), 0.45), transparent 70%),
+    radial-gradient(circle at 80% -10%, rgba(var(--pink), 0.35), transparent 70%),
+    radial-gradient(circle at 50% 120%, rgba(var(--mint), 0.20), transparent 75%),
+    linear-gradient(180deg, rgb(var(--dark1)), rgb(var(--dark2)));
+
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
 }
 
-#sticky-card-1 {
-  --index: 1;
+/* ✨ Stronger Grid Pattern (Premium Look) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 38px 38px;
+  z-index: -1;
+  opacity: 0.6;
 }
 
-#sticky-card-2 {
-  --index: 2;
+/* 💎 ULTRA GLASSMORPHIC CARD */
+.card-elevated {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+
+  /* More Neon Pop */
+  box-shadow:
+    0 0 25px rgba(var(--violet), 0.25),
+    0 0 18px rgba(var(--mint), 0.15),
+    inset 0 0 18px rgba(var(--pink), 0.08);
+
+  transition: all 0.35s ease;
 }
 
-#sticky-card-3 {
-  --index: 3;
+.card-elevated:hover {
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(var(--mint), 0.5);
+
+  box-shadow:
+    0 0 40px rgba(var(--mint), 0.55),
+    0 0 25px rgba(var(--violet), 0.45),
+    inset 0 0 24px rgba(var(--pink), 0.20);
 }
 
-#sticky-card-4 {
-  --index: 4;
-}
+/* 🧲 REFINED STICKY CARDS */
+#sticky-card-1 { --index: 1; }
+#sticky-card-2 { --index: 2; }
+#sticky-card-3 { --index: 3; }
+#sticky-card-4 { --index: 4; }
 
 .sticky-card {
-  // padding-top: calc(var(--index) * 2.5rem);
-  top: calc(var(--index) * 4rem);
+  @apply card-elevated;
+  position: sticky;
+  top: calc(var(--index) * 4.6rem + 1.2rem);
+  padding: 1.2rem;
+  z-index: calc(10 + var(--index));
+  border-radius: 18px;
+}
+
+/* 🔥 Stronger Accent Glow Line */
+.sticky-card::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--pink), 0),
+    rgba(var(--violet), 0.9),
+    rgba(var(--mint), 0)
+  );
+  opacity: 0.9;
+}
+
+/* 🎯 PREMIUM NEON BUTTON */
+.btn-primary {
+  background: linear-gradient(135deg, rgba(var(--pink),1), rgba(var(--violet),1));
+  color: white;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  transition: 0.35s ease;
+  box-shadow:
+    0 0 20px rgba(var(--violet), 0.4),
+    inset 0 0 10px rgba(var(--mint), 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow:
+    0 0 35px rgba(var(--mint), 0.7),
+    0 0 28px rgba(var(--violet), 0.6),
+    inset 0 0 18px rgba(var(--pink), 0.5);
+}
+
+/* 🌈 Better Neon Gradient Text */
+.text-gradient {
+  background: linear-gradient(135deg,
+      rgb(var(--mint)),
+      rgb(var(--pink)),
+      rgb(var(--violet)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🧭 Smooth UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 💠 Neon Scrollbar */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+      180deg, 
+      rgba(var(--pink),0.8), 
+      rgba(var(--violet),0.8)
+  );
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(var(--violet),0.5);
 }

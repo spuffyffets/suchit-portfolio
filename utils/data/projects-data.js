@@ -20,7 +20,7 @@ export const projectsData = [
     role: 'Frontend and Backend Developer',
     code: 'https://github.com/Minal1303/ubuntu-hardening.git',
     demo: 'https://github.com/Minal1303/ubuntu-hardening.git',
-    image: '/image/Ubuntu Hardening GUI Application-1.jpg', 
+    image: '/image/Ubuntu Hardening GUI Application-1.jpg',   
   },
 
   {
@@ -42,7 +42,7 @@ export const projectsData = [
     role: 'Full Stack Developer',
     code: 'https://github.com/spuffyffets/MERN-School-Management-System.git',
     demo: 'https://school-commander.vercel.app/',
-    image: '/image/Student Management System.png', // ✅ FIXED
+    image: '/image/Student Management System.png', 
   },
 
   {
@@ -62,6 +62,6 @@ export const projectsData = [
     role: 'Full Stack Developer',
     code: 'https://github.com/spuffyffets/frontend.git',
     demo: 'https://medtrackbysuchit.vercel.app/login',
-    image: '/image/Inventory Management System.png', // ✅ FIXED
+    image: '/image/Inventory Management System.png', 
   },
 ];

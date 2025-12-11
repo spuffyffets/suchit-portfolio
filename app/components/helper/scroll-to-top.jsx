@@ -3,31 +3,32 @@
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa6";
 
-const DEFAULT_BTN_CLS =
-  "fixed bottom-8 right-6 z-50 flex items-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 p-4 hover:text-xl transition-all duration-300 ease-out";
-const SCROLL_THRESHOLD = 50;
-
 const ScrollToTop = () => {
-  const [btnCls, setBtnCls] = useState(DEFAULT_BTN_CLS);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > SCROLL_THRESHOLD) {
-        setBtnCls(DEFAULT_BTN_CLS.replace(" hidden", ""));
-      } else {
-        setBtnCls(DEFAULT_BTN_CLS + " hidden");
-      }
+    const onScroll = () => {
+      setVisible(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => {
-      window.removeEventListener("scroll", handleScroll, { passive: true });
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
-  const onClickBtn = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
   return (
-    <button className={btnCls} onClick={onClickBtn}>
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className={`
+        fixed bottom-8 right-6 z-50 p-4 rounded-full
+        bg-gradient-to-r from-pink-500 to-violet-600
+        transition-all duration-300 ease-out text-white
+        flex items-center justify-center
+        ${visible ? "" : "hidden"}
+      `}
+    >
       <FaArrowUp />
     </button>
   );
